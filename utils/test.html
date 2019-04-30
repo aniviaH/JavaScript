@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="./index.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		//checkDataType
+		var a = function(){
+			console.log('a');
+		}
+		b = a;
+		b = function(){
+			console.log('b');
+		}
+		a();
+		b();
+
+		console.log(checkDataType(1));
+		console.log(checkDataType('1'));
+		console.log(checkDataType(true));
+		console.log(checkDataType(undefined));
+		console.log(checkDataType(null));
+		console.log(checkDataType({a: 1}));
+		console.log(checkDataType([1, 2]));
+		console.log(checkDataType(new Function()))
+		console.log(checkDataType(new Date()))
+		console.log(checkDataType(new RegExp()))
+		console.log(checkDataType(new Error()))
+
+		//cloneDeep
+		var source = {
+			a: {
+				a1: 1,
+				a2: 2,
+			},
+			b: {
+				b1: 1,
+				b2: 2
+			},
+			c: [1, 2, 3, 4]
+		}
+		var result = cloneDeep(source);
+		result.c = [1, 2];
+		console.log(source);
+		console.log(result);
+
+		
+	</script>
+</body>
+</html>
